@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Virtual Sticky Notes</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .sticky-note {
+            background-color: #ffeb3b;
+            width: 250px;
+            min-height: 250px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sticky-note:nth-child(even) {
+            background-color: #ffccbc;
+            transform: rotate(3deg);
+        }
+
+        .sticky-note:nth-child(3n) {
+            background-color: #c8e6c9;
+            transform: rotate(-1deg);
+        }
+
+        .sticky-note:hover {
+            transform: scale(1.1) rotate(0deg);
+            z-index: 10;
+        }
+
+        .sticky-note img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 2px;
+            margin-bottom: 15px;
+            border: 5px solid white;
+            box-sizing: border-box;
+        }
+
+        .sticky-note p {
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Dekorasi paku/selotip */
+        .sticky-note::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            width: 40px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-note">
+        <img src="assets/1.jpg">
+        <p>"Setiap langkah kecil adalah progres. Jangan menyerah!"</p>
+    </div>
+
+    <div class="sticky-note">
+        <img src="assets/2.jpg">
+        <p>"Kegagalan hari ini adalah bahan bakar untuk sukses hari esok."</p>
+    </div>
+
+    <div class="sticky-note">
+        <img src="assets/3.jpg">
+        <p>"Tetap semangat, semua hal berat akan segera berlalu."</p>
+    </div>
+
+</body>
+</html>
